@@ -7,8 +7,10 @@ export class CookiesServices {
   getCookiesOptionBasedOnUserAgent(userAgent: string) {
     const cookiesOptions: CookieOptions = {
       httpOnly: true,
-      sameSite: 'none',
-      secure: true,
+      // sameSite: 'none',
+      sameSite: 'strict',
+      // secure: true,
+      secure: false,
     };
     const { family, major } = useragent.parse(userAgent) || {};
     if (family === 'Chrome' && +major >= 51 && +major <= 66) {
