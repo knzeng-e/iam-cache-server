@@ -24,6 +24,7 @@ services:
       - ratel
       - postgres
   postgres:
+    container_name: postgres
     image: postgres:12-alpine
     environment:
       #POSTGRES_PASSWORD: secrets.DB_PASSWORD
